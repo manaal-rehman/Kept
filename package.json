@@ -1,0 +1,30 @@
+{
+  "name": "kept",
+  "private": true,
+  "version": "0.3.0",
+  "type": "module",
+  "description": "Kept — personal AI work assistant (Tauri + React + Rust)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit -p ui && vite build",
+    "typecheck": "tsc --noEmit -p ui",
+    "tauri": "tauri",
+    "app:dev": "tauri dev",
+    "app:build": "tauri build",
+    "test": "cargo test -p kept-core"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.12.4",
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.3",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.4",
+    "typescript": "5.6.3",
+    "vite": "6.4.4"
+  }
+}

@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = ["crates/kept-core", "src-tauri"]
+
+[workspace.package]
+version = "0.3.0"
+edition = "2021"
+license = "MIT"
+
+[profile.release]
+# Small, fast binaries: this is a tray app that runs all day.
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
