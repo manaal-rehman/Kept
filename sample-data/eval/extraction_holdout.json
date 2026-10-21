@@ -1,0 +1,34 @@
+{
+  "description": "HELD-OUT cases written after the extractor was tuned on extraction_cases.json, and never used for tuning. Report these numbers as the honest estimate of quality on new phrasing.",
+  "me": { "name": "Alex Morgan", "email": "alex@example.com" },
+  "reference": "2026-10-13T05:00:00Z",
+  "timezone": "Asia/Karachi",
+  "cases": [
+    { "id": "h01", "from": "Alex Morgan <alex@example.com>", "to": ["jo@acme.example"], "body": "No problem, I will put together a short summary of the call and send it round by Thursday.", "expect": [{ "kind": "my_commitment", "title_has": ["summary"], "due": "explicit" }] },
+    { "id": "h02", "from": "Jo Bauer <jo@acme.example>", "to": ["alex@example.com"], "body": "Hey Alex, are you able to share the Figma link with the design agency today?", "expect": [{ "kind": "request_to_me", "title_has": ["figma"] }] },
+    { "id": "h03", "from": "Jo Bauer <jo@acme.example>", "to": ["alex@example.com"], "body": "We're blocked until you confirm which pricing tier we're launching with.", "expect": [{ "kind": "approval_request" }] },
+    { "id": "h04", "from": "Alex Morgan <alex@example.com>", "to": ["jo@acme.example"], "body": "Thanks for flagging. I'll look into why the export is failing and report back tomorrow morning.", "expect": [{ "kind": "my_commitment", "title_has": ["export"], "due": "inferred" }] },
+    { "id": "h05", "from": "Ravi Shah <ravi@acme.example>", "to": ["alex@example.com"], "body": "Just a nudge on the contract redlines — legal needs them back by EOD Friday.", "expect": [{ "kind": "followup_nudge" }] },
+    { "id": "h06", "from": "Ravi Shah <ravi@acme.example>", "to": ["alex@example.com"], "body": "Can you send the updated org chart to HR before the 20th?", "expect": [{ "kind": "request_to_me", "title_has": ["org chart"], "due": "explicit" }] },
+    { "id": "h07", "from": "Alex Morgan <alex@example.com>", "to": ["ravi@acme.example"], "body": "Sure thing — I'll have a first draft of the RFP response ready for you next week.", "expect": [{ "kind": "my_commitment", "title_has": ["rfp"] }] },
+    { "id": "h08", "from": "Mei Chen <mei@acme.example>", "to": ["alex@example.com"], "kind": "chat", "body": "could u approve my PTO request when you get a sec", "expect": [{ "kind": "approval_request" }] },
+    { "id": "h09", "from": "Mei Chen <mei@acme.example>", "to": ["alex@example.com"], "body": "It'd be great if you could walk the new hires through the analytics stack on Monday.", "expect": [{ "kind": "request_to_me", "title_has": ["new hires"] }] },
+    { "id": "h10", "from": "Alex Morgan <alex@example.com>", "to": ["mei@acme.example"], "body": "Let me get back to you on the headcount question after I talk to finance.", "expect": [{ "kind": "my_commitment", "title_has": ["headcount"] }] },
+    { "id": "h11", "from": "Jo Bauer <jo@acme.example>", "to": ["alex@example.com"], "body": "Please make sure the release notes are published before the customer webinar.", "expect": [{ "kind": "request_to_me", "title_has": ["release notes"] }] },
+    { "id": "h12", "from": "Ravi Shah <ravi@acme.example>", "to": ["alex@example.com"], "body": "As discussed, you'll own the vendor evaluation and share a recommendation by month end.", "expect": [{ "kind": "implicit_assignment", "title_has": ["vendor"], "review": true }] },
+    { "id": "h13", "from": "Alex Morgan <alex@example.com>", "to": ["jo@acme.example"], "body": "I'll try to join the retro but can't promise.", "expect": [{ "kind": "my_commitment", "review": true }] },
+    { "id": "h14", "from": "Mei Chen <mei@acme.example>", "to": ["alex@example.com"], "body": "Did you get a chance to look at the Q3 variance numbers I sent?", "expect": [{ "kind": "followup_nudge" }] },
+    { "id": "h15", "from": "Alex Morgan <alex@example.com>", "to": ["mei@acme.example"], "body": "Will send the signed SOW over in the next couple of hours.", "expect": [{ "kind": "my_commitment", "title_has": ["sow"] }] },
+
+    { "id": "hn01", "from": "Jo Bauer <jo@acme.example>", "to": ["alex@example.com"], "body": "I'll ask the agency for revised mockups and forward them when they arrive.", "expect": [] },
+    { "id": "hn02", "from": "Ravi Shah <ravi@acme.example>", "to": ["Mei Chen <mei@acme.example>"], "cc": ["alex@example.com"], "body": "Mei, could you update the risk register before Thursday?", "expect": [] },
+    { "id": "hn03", "from": "Alex Morgan <alex@example.com>", "to": ["jo@acme.example"], "body": "We shipped the new onboarding flow last Tuesday.", "expect": [] },
+    { "id": "hn04", "from": "IT Service Desk <it@acme.example>", "to": ["alex@example.com"], "body": "Your password will expire in 14 days. This is an automated message.", "expect": [], "note": "Automated notice; arguably actionable, labelled as not a work commitment." },
+    { "id": "hn05", "from": "Mei Chen <mei@acme.example>", "to": ["alex@example.com"], "body": "Thanks so much for sending the deck yesterday, it was perfect.", "expect": [] },
+    { "id": "hn06", "from": "Alex Morgan <alex@example.com>", "to": ["ravi@acme.example"], "body": "Maybe we could revisit the pricing model next year.", "expect": [] },
+    { "id": "hn07", "from": "Jo Bauer <jo@acme.example>", "to": ["alex@example.com", "ravi@acme.example", "mei@acme.example"], "body": "Reminder: the all-hands has moved to 4pm on Thursday.", "expect": [] },
+    { "id": "hn08", "from": "Ravi Shah <ravi@acme.example>", "to": ["alex@example.com"], "body": "Legal said they would review the NDA by Wednesday.", "expect": [] },
+    { "id": "hn09", "from": "Alex Morgan <alex@example.com>", "to": ["mei@acme.example"], "body": "Done — the report is in the shared drive.", "expect": [] },
+    { "id": "hn10", "from": "Mei Chen <mei@acme.example>", "to": ["alex@example.com"], "kind": "chat", "body": "haha yes, will you be at the party friday?", "expect": [] }
+  ]
+}

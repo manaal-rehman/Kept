@@ -1,0 +1,747 @@
+{
+  "description": "Labelled synthetic messages for measuring commitment extraction. 'me' is Alex Morgan <alex@example.com>. 'expect' lists items that should create a task (or review suggestion) for me; an empty list means nothing should become my task. 'review: true' means the item must land in the review queue rather than be auto-accepted. Reference time for relative dates: Tuesday 2026-10-13 10:00 Asia/Karachi.",
+  "me": {
+    "name": "Alex Morgan",
+    "email": "alex@example.com"
+  },
+  "reference": "2026-10-13T05:00:00Z",
+  "timezone": "Asia/Karachi",
+  "cases": [
+    {
+      "id": "p01",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "Sara Lindqvist <sara@nw.example>"
+      ],
+      "body": "I'll share the revised report tomorrow.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "report"
+          ],
+          "due": "inferred"
+        }
+      ]
+    },
+    {
+      "id": "p02",
+      "from": "Sara Lindqvist <sara@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Could you send me the updated analysis before Thursday?",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "analysis"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p03",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "omar@nw.example"
+      ],
+      "body": "Let me check with the finance team and get back to you.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "finance"
+          ],
+          "due": "none"
+        }
+      ]
+    },
+    {
+      "id": "p04",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "team@nw.example"
+      ],
+      "body": "I'll prepare the slides before our Monday meeting.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "slides"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p05",
+      "from": "Omar Haddad <omar@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "subject": "Budget proposal",
+      "body": "We still need your approval to move forward.",
+      "expect": [
+        {
+          "kind": "approval_request",
+          "title_has": [
+            "approval"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p06",
+      "from": "Lina Park <lina@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Since you're putting together the Q4 budget summary, I'll send you the regional numbers by Wednesday.",
+      "expect": [
+        {
+          "kind": "implicit_assignment",
+          "title_has": [
+            "budget"
+          ],
+          "review": true,
+          "due": "none"
+        }
+      ]
+    },
+    {
+      "id": "p07",
+      "from": "Sara Lindqvist <sara@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "subject": "Report",
+      "body": "Following up on the report you promised last week.",
+      "expect": [
+        {
+          "kind": "followup_nudge",
+          "title_has": [
+            "report"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p08",
+      "from": "Kim Reyes <kim@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Please send me the travel receipts by Monday.",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "receipts"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p09",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "dan@contoso.example"
+      ],
+      "body": "Sounds good. I will send over the signed NDA by end of day.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "nda"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "from": "Priya Nair <priya@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Can you review the hiring plan and let me know your thoughts by Friday?",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "hiring"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "priya@nw.example"
+      ],
+      "body": "I'm going to draft the migration plan this week.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "migration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "from": "Hana Ito <hana@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "kind": "chat",
+      "body": "@alex can you fix the broken link on the pricing page today?",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "link"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "from": "Daniel Osei <dan@contoso.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Would you be able to join the vendor call on Thursday and present the timeline?",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "timeline"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "from": "Omar Haddad <omar@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Please sign off on the Q4 hiring budget before 3pm.",
+      "expect": [
+        {
+          "kind": "approval_request",
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "lina@nw.example"
+      ],
+      "body": "I'll get you the customer list within 2 business days.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "customer"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "from": "Sara Lindqvist <sara@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Any update on the security questionnaire? The client is asking.",
+      "expect": [
+        {
+          "kind": "followup_nudge",
+          "title_has": [
+            "security"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p17",
+      "from": "Bob Tran <bob@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Don't forget to submit your expense report by the 25th of October.",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "expense"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p18",
+      "from": "Priya Nair <priya@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "You're presenting the roadmap at Thursday's all-hands, right? Make sure the demo works.",
+      "expect": [
+        {
+          "kind": "implicit_assignment",
+          "title_has": [
+            "roadmap"
+          ],
+          "review": true
+        }
+      ]
+    },
+    {
+      "id": "p19",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "kim@nw.example"
+      ],
+      "body": "Leave it with me, I'll take care of the conference registration.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "registration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p20",
+      "from": "Lina Park <lina@nw.example>",
+      "to": [
+        "alex@example.com",
+        "bob@nw.example"
+      ],
+      "body": "Can someone update the onboarding doc before next week?",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "onboarding"
+          ],
+          "review": true
+        }
+      ]
+    },
+    {
+      "id": "p21",
+      "from": "Dan Osei <dan@contoso.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Hi Alex — what's the status of the integration? Are we still on track for launch?",
+      "expect": [
+        {
+          "kind": "reply_needed",
+          "review": true
+        }
+      ]
+    },
+    {
+      "id": "p22",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "omar@nw.example"
+      ],
+      "body": "If the numbers look off, I'll redo the forecast.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "forecast"
+          ],
+          "review": true
+        }
+      ]
+    },
+    {
+      "id": "p23",
+      "from": "Omar Haddad <omar@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Gentle reminder — the vendor contract approval is still pending on your side.",
+      "expect": [
+        {
+          "kind": "followup_nudge"
+        }
+      ]
+    },
+    {
+      "id": "p24",
+      "from": "Priya Nair <priya@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "I need you to finalise the board deck by noon tomorrow.",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "board"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p25",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "hana@nw.example"
+      ],
+      "body": "Will do — I'll ping legal about the contract terms.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "legal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p26",
+      "from": "Sara Lindqvist <sara@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "When you get a chance, could you look over my draft and add comments?",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "draft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p27",
+      "from": "Bob Tran <bob@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "The demo is on you for next sprint review.",
+      "expect": [
+        {
+          "kind": "implicit_assignment",
+          "title_has": [
+            "demo"
+          ],
+          "review": true
+        }
+      ],
+      "note": "Idiomatic ownership phrasing the rules extractor is not expected to catch (false-negative probe)."
+    },
+    {
+      "id": "p28",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "sara@nw.example"
+      ],
+      "body": "Happy to help. I can have the revised pricing to you by Thursday.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "pricing"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p29",
+      "from": "Lina Park <lina@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Would love your feedback on the new landing page copy when you have a moment.",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "landing"
+          ]
+        }
+      ],
+      "note": "Indirect request without a request verb (false-negative probe)."
+    },
+    {
+      "id": "p30",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "priya@nw.example"
+      ],
+      "body": "Noted. I'll circle back once I've spoken with procurement.",
+      "expect": [
+        {
+          "kind": "my_commitment",
+          "title_has": [
+            "procurement"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p31",
+      "from": "Waseem Rehman <waseem@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "subject": "Deadline",
+      "body": "Tomorrow is the deadline, if you fail to deliver you will be fired.",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "deadline"
+          ],
+          "due": "explicit",
+          "review": true
+        }
+      ],
+      "note": "Added after user report: deadline statement with no request verb."
+    },
+    {
+      "id": "p32",
+      "from": "Priya Nair <priya@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "The quarterly report is due Friday.",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "quarterly report"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "p33",
+      "from": "Kim Reyes <kim@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "You must submit the timesheet by 5pm.",
+      "expect": [
+        {
+          "kind": "request_to_me",
+          "title_has": [
+            "timesheet"
+          ],
+          "due": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "n01",
+      "from": "Bob Tran <bob@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "I'll book the meeting room for the offsite.",
+      "expect": []
+    },
+    {
+      "id": "n02",
+      "from": "Sara Lindqvist <sara@nw.example>",
+      "to": [
+        "Omar Haddad <omar@nw.example>"
+      ],
+      "cc": [
+        "alex@example.com"
+      ],
+      "body": "Omar, can you send the signed contract to legal today?",
+      "expect": []
+    },
+    {
+      "id": "n03",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "priya@nw.example"
+      ],
+      "body": "If we get budget next quarter, I'd probably hire a contractor.",
+      "expect": []
+    },
+    {
+      "id": "n04",
+      "from": "Facilities <fac@nw.example>",
+      "to": [
+        "alex@example.com",
+        "all@nw.example"
+      ],
+      "body": "The office will close early on Friday for maintenance. No action is needed.",
+      "expect": []
+    },
+    {
+      "id": "n05",
+      "from": "Omar Haddad <omar@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Thanks, I received the invoice — all sorted, nothing else needed.",
+      "expect": []
+    },
+    {
+      "id": "n06",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "priya@nw.example"
+      ],
+      "body": "I presented the roadmap at last week's all-hands.",
+      "expect": []
+    },
+    {
+      "id": "n07",
+      "from": "Priya Nair <priya@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Great work on the launch yesterday! The team really appreciated it.",
+      "expect": []
+    },
+    {
+      "id": "n08",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "sara@nw.example"
+      ],
+      "body": "I won't be able to make the workshop on Friday, sorry.",
+      "expect": []
+    },
+    {
+      "id": "n09",
+      "from": "Lina Park <lina@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Priya will handle the vendor invoices from now on.",
+      "expect": []
+    },
+    {
+      "id": "n10",
+      "from": "Newsletter <news@vendor.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Register by October 30 to get early-bird pricing for our annual summit!",
+      "expect": [],
+      "note": "Marketing deadline that is not a commitment (likely false-positive probe)."
+    },
+    {
+      "id": "n11",
+      "from": "Hana Ito <hana@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "kind": "chat",
+      "body": "lol can you believe the queue at lunch today",
+      "expect": []
+    },
+    {
+      "id": "n12",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "dan@contoso.example"
+      ],
+      "body": "I could send it over if that helps.",
+      "expect": []
+    },
+    {
+      "id": "n13",
+      "from": "Sara Lindqvist <sara@nw.example>",
+      "to": [],
+      "kind": "chat",
+      "body": "Can someone grab coffee for the 3pm?",
+      "expect": []
+    },
+    {
+      "id": "n14",
+      "from": "Omar Haddad <omar@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "We'll send the final invoice next week.",
+      "expect": []
+    },
+    {
+      "id": "n15",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "kim@nw.example"
+      ],
+      "body": "Thanks Kim, let me know if you need anything else.",
+      "expect": []
+    },
+    {
+      "id": "n16",
+      "from": "Priya Nair <priya@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "Hope you had a great weekend! How was the trip?",
+      "expect": []
+    },
+    {
+      "id": "n17",
+      "from": "Daniel Osei <dan@contoso.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "The project was approved by the board last month.",
+      "expect": []
+    },
+    {
+      "id": "n18",
+      "from": "Alex Morgan <alex@example.com>",
+      "to": [
+        "sara@nw.example"
+      ],
+      "body": "I've already sent the deck to the client.",
+      "expect": []
+    },
+    {
+      "id": "n19",
+      "from": "Bob Tran <bob@nw.example>",
+      "to": [
+        "Lina Park <lina@nw.example>",
+        "alex@example.com"
+      ],
+      "body": "Lina, please update the sprint board before standup.",
+      "expect": []
+    },
+    {
+      "id": "n20",
+      "from": "Sara Lindqvist <sara@nw.example>",
+      "to": [
+        "alex@example.com"
+      ],
+      "body": "FYI the client moved the launch to November.",
+      "expect": []
+    }
+  ]
+}

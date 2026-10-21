@@ -1,0 +1,10 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "The dashboard window may only call Kept's own commands and show notifications. File dialogs, URL opening and autostart are performed by the Rust side after validation.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "notification:default"
+  ]
+}
